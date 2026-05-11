@@ -603,8 +603,8 @@ function submitOrder() {
   localStorage.setItem('choco_orders', JSON.stringify(orders));
 
   // Send to Telegram bot
-  const BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
-  const ADMIN_CHAT_ID = 'YOUR_CHAT_ID_HERE';
+  const BOT_TOKEN = '8011900597:AAFbIZJdeQxwiH9WgNL-bN4W0HVaSfxCReI';
+  const ADMIN_CHAT_ID = '88808651';
   const msg = `🛍 *Yangi buyurtma!*\n\n👤 ${name}\n📞 ${phone}\n📍 ${order.address}\n💳 To'lov: ${selectedPay}\n\n${itemsList.join('\n')}\n\n💰 Jami: ${sum.toLocaleString()} so'm${comment?'\n\n💬 Izoh: '+comment:''}`;
 
   fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{
