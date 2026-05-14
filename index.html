@@ -749,7 +749,7 @@ async function submitOrder(){
   const BOT_TOKEN='8011900597:AAHgKYkPrLnDc6sjLJsR36VE_fNANfnWNvg';
   const ADMIN_CHAT_ID='88808651';
   const msg=`🛍 Yangi buyurtma!\n\n👤 ${name}\n📞 ${phone}\n📍 ${order.address}\n💳 To'lov: ${selectedPay}\n\n${itemsList.join('\n')}\n\n🚚 Yetkazib berish: ${delivery===0?'Bepul':delivery.toLocaleString()+' so\'m'}\n💰 Jami: ${(sum+delivery).toLocaleString()} so'm${comment?'\n\n💬 Izoh: '+comment:''}`;
-  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:ADMIN_CHAT_ID,text:msg,parse_mode:'Markdown'})}).catch(()=>{});
+  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:ADMIN_CHAT_ID,text:msg,:'Markdown'})}).catch(()=>{});
   cart={};updateCartBadge();showPage('success');
 }
 
