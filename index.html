@@ -404,7 +404,10 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 // ========== SUPABASE ==========
 async function sbFetch(path, options={}) {
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
     const res = await fetch(SUPABASE_URL + '/rest/v1/' + path, {
+      signal: controller.signal,
       headers: {
         'apikey': SUPABASE_KEY,
         'Authorization': 'Bearer ' + SUPABASE_KEY,
@@ -414,10 +417,10 @@ async function sbFetch(path, options={}) {
       },
       ...options
     });
+    clearTimeout(timeout);
     const text = await res.text();
     return text ? JSON.parse(text) : null;
   } catch(e) {
-    console.error('sbFetch error:', e);
     return null;
   }
 }
