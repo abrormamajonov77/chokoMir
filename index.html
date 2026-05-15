@@ -568,16 +568,15 @@ async function init() {
 
   document.getElementById('logo-tap').addEventListener('click', () => {
     logoTaps++;
-    if (logoTaps >= 5) {
-      logoTaps = 0;
-      openAdmin();
-    }
+    if (logoTaps >= 5) { logoTaps = 0; openAdmin(); }
   });
 
-  // Load from Supabase
-  await loadSettingsFromDB();
-  await loadProductsFromDB();
-  await loadOrdersFromDB();
+  // Supabase dan parallel yuklash
+  Promise.all([
+    loadSettingsFromDB(),
+    loadProductsFromDB(),
+    loadOrdersFromDB()
+  ]).catch(e => console.error('Load error:', e));
 }
 
 function updateShopInfo() {
