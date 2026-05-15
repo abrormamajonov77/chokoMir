@@ -446,6 +446,7 @@ async function loadSettingsFromDB() {
     const s = data[0];
     settings.deliveryPrice = s.delivery_price;
     settings.freeDeliveryFrom = s.free_delivery_from;
+    localStorage.setItem('choco_settings', JSON.stringify(settings));
     if (s.shop_name) { shopInfo.name = s.shop_name; }
     updateBanner();
     updateShopInfo();
