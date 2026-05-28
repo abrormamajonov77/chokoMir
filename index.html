@@ -330,7 +330,20 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
       </div>
       <div class="form-field"><label>Yoki yangi kategoriya</label><input type="text" id="ap-cat-new" placeholder="Masalan: Quruq mevalar"/></div>
       <div class="form-field"><label>Narx (so'm) *</label><input type="number" id="ap-price" placeholder="15000"/></div>
-      <div class="form-field"><label>Og'irligi/Hajmi</label><input type="text" id="ap-weight" placeholder="100g"/></div>
+      <div class="form-field"><label>Og'irligi/Hajmi</label><input type="text" id="ap-weight" placeholder="100"/></div>
+      <div class="form-field"><label>O'lchov birligi</label>
+        <select class="select-field" id="ap-unit">
+          <option value="dona">dona</option>
+          <option value="blok">blok</option>
+          <option value="g">gramm (g)</option>
+          <option value="kg">kilogramm (kg)</option>
+          <option value="ml">millilitr (ml)</option>
+          <option value="l">litr (l)</option>
+          <option value="paket">paket</option>
+          <option value="quti">quti</option>
+          <option value="">— (bo'sh)</option>
+        </select>
+      </div>
       <div class="form-field"><label>Emoji</label><input type="text" id="ap-emoji" placeholder="🍫"/></div>
       <div class="form-field"><label>Rasm (telefon yoki kamera)</label>
         <input type="file" id="ap-img-file" accept="image/*" capture="environment" style="display:none" onchange="handleImgUpload(this)"/>
@@ -997,7 +1010,9 @@ async function addProduct() {
   const cat = catNew || catSelect;
   const priceVal = document.getElementById('ap-price').value.trim();
   const price = parseInt(priceVal);
-  const weight = document.getElementById('ap-weight').value.trim() || '-';
+  const weightVal = document.getElementById('ap-weight').value.trim();
+  const unit = document.getElementById('ap-unit').value;
+  const weight = weightVal ? weightVal + (unit ? ' ' + unit : '') : (unit || '-');
   const emoji = document.getElementById('ap-emoji').value.trim() || '📦';
 
   if (!name) { alert("Mahsulot nomini kiriting!"); return; }
@@ -1019,6 +1034,7 @@ async function addProduct() {
   document.getElementById('ap-weight').value = '';
   document.getElementById('ap-emoji').value = '';
   document.getElementById('ap-cat-new').value = '';
+  document.getElementById('ap-unit').selectedIndex = 0;
   document.getElementById('ap-img-preview').style.display = 'none';
   newImgBase64 = '';
 
