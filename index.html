@@ -480,7 +480,8 @@ async function loadOrdersFromDB() {
       address: o.address, comment: o.comment,
       pay: o.pay, items: o.items || [],
       total: o.total, delivery: o.delivery || 0,
-      status: o.status, date: o.created_at
+      status: o.status, date: o.created_at,
+      user_chat_id: o.user_chat_id || ''
     }));
   }
 }
@@ -493,7 +494,7 @@ async function saveOrderToDB(order) {
       address: order.address, comment: order.comment,
       pay: order.pay, items: order.items,
       total: order.total, delivery: order.delivery,
-      status: 'new'
+      status: 'new', user_chat_id: order.user_chat_id
     })
   });
 }
@@ -790,11 +791,26 @@ async function submitOrder() {
   const delivery = sum >= settings.freeDeliveryFrom ? 0 : settings.deliveryPrice;
   const fullAddress = address + (flat ? ', ' + flat : '');
 
-  const order = { name, phone, address: fullAddress, comment, pay: selectedPay, items: itemsList, total: sum, delivery };
+  const order = { name, phone, address: fullAddress, comment, pay: selectedPay, items: itemsList, total: sum, delivery, user_chat_id: tgUser ? String(tgUser.id) : '' };
 
   // Supabase ga saqlash
   const saved = await saveOrderToDB(order);
   const orderId = saved && saved[0] ? saved[0].id : Date.now();
+
+  // Mijozga tasdiqlash xabari
+  if (tgUser && tgUser.id) {
+    const userMsg = "Buyurtmangiz qabul qilindi! #" + orderId + "\n\n"
+      + itemsList.join("\n") + "\n\n"
+      + "Jami: " + (sum + delivery).toLocaleString() + " som\n"
+      + "Tolov: " + selectedPay + "\n"
+      + "Manzil: " + fullAddress + "\n\n"
+      + "Tez orada bog'lanamiz!";
+    fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: tgUser.id, text: userMsg })
+    }).catch(() => {});
+  }
 
   // Telegram xabar - Markdown ishlatmaymiz
   const deliveryText = delivery === 0 ? 'Bepul' : delivery.toLocaleString() + " som";
@@ -935,6 +951,26 @@ async function renderAdminOrders() {
 
 async function changeOrderStatus(id, status) {
   await updateOrderStatusInDB(id, status);
+
+  // Mijozga xabar yuborish
+  const order = orders.find(o => o.id === id);
+  if (order && order.user_chat_id) {
+    const statusMessages = {
+      confirmed: "Buyurtmangiz tasdiqlandi! #" + id + "\n\nTez orada tayyorlanadi.",
+      cooking: "Buyurtmangiz tayyorlanmoqda! #" + id + "\n\nBiroz kuting...",
+      onway: "Buyurtmangiz yo'lda! #" + id + "\n\nKurier siz tomonga yo'l oldi.",
+      delivered: "Buyurtmangiz yetib keldi! #" + id + "\n\nXarid qilganingiz uchun rahmat!\n\nIltimos bizni baholang:"
+    };
+    const msg = statusMessages[status];
+    if (msg) {
+      fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: order.user_chat_id, text: msg })
+      }).catch(() => {});
+    }
+  }
+
   if (status === 'delivered') {
     setTimeout(() => document.getElementById('rating-modal').classList.remove('hidden'), 500);
   }
