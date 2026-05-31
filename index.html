@@ -424,7 +424,7 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 async function sbFetch(path, options={}) {
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 5000);
+    const timeout = setTimeout(() => controller.abort(), 3000);
     const res = await fetch(SUPABASE_URL + '/rest/v1/' + path, {
       signal: controller.signal,
       headers: {
@@ -591,13 +591,9 @@ async function init() {
   updateCartBadge();
   updateBanner();
 
-  // Darhol cache dan ko'rsatish
-  if (products.length > 0) {
-    renderCats();
-    renderProducts(products);
-  } else {
-    document.getElementById('products-list').innerHTML = '<div style="text-align:center;padding:30px;color:var(--text2)">Yuklanmoqda...</div>';
-  }
+  // Darhol ko'rsatish - cache yoki bo'sh
+  renderCats();
+  renderProducts(products);
 
   if (savedUser) {
     document.getElementById('f-name').value = savedUser.name || '';
@@ -611,12 +607,12 @@ async function init() {
     if (logoTaps >= 5) { logoTaps = 0; openAdmin(); }
   });
 
-  // Supabase dan parallel yuklash
+  // Supabase dan yuklash - fon rejimida
   Promise.all([
     loadSettingsFromDB(),
     loadProductsFromDB(),
     loadOrdersFromDB()
-  ]).catch(e => console.error('Load error:', e));
+  ]).catch(() => {});
 }
 
 function updateShopInfo() {
