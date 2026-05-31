@@ -447,7 +447,6 @@ async function sbFetch(path, options={}) {
 async function loadProductsFromDB() {
   const data = await sbFetch('products?order=id.asc');
   if (data !== null) {
-    // Supabase dan kelgan ma'lumot (bo'sh bo'lsa ham) - default mahsulotlarni o'chiramiz
     if (data.length > 0) {
       products = data.map(p => ({
         id: p.id, name: p.name, cat: p.cat,
@@ -456,9 +455,11 @@ async function loadProductsFromDB() {
         inStock: p.in_stock
       }));
       nextProductId = Math.max(...products.map(p => p.id)) + 1;
+      // Cache ga saqlaymiz
+      localStorage.setItem('choco_products_cache', JSON.stringify(products));
     } else {
-      // Supabase bo'sh — default mahsulotlarni ham o'chirmaymiz
-      products = [...defaultProducts];
+      products = [];
+      localStorage.removeItem('choco_products_cache');
     }
     renderCats();
     renderProducts(products);
@@ -558,7 +559,9 @@ const defaultProducts = [
   {id:7,name:'Nescafe 3in1',cat:'Ichimliklar',price:22000,weight:'20 paket',emoji:'☕',img:'',inStock:true},
 ];
 
-let products = [...defaultProducts];
+// Avval localStorage dan yuklash (tez)
+const cachedProducts = localStorage.getItem('choco_products_cache');
+let products = cachedProducts ? JSON.parse(cachedProducts) : [];
 let nextProductId = products.length + 1;
 let cart = {};
 let orders = [];
@@ -585,10 +588,16 @@ let logoTaps = 0;
 async function init() {
   updateShopInfo();
   checkWorkHours();
-  renderCats();
-  renderProducts(products);
   updateCartBadge();
   updateBanner();
+
+  // Darhol cache dan ko'rsatish
+  if (products.length > 0) {
+    renderCats();
+    renderProducts(products);
+  } else {
+    document.getElementById('products-list').innerHTML = '<div style="text-align:center;padding:30px;color:var(--text2)">Yuklanmoqda...</div>';
+  }
 
   if (savedUser) {
     document.getElementById('f-name').value = savedUser.name || '';
