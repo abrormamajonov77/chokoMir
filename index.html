@@ -446,24 +446,24 @@ async function sbFetch(path, options={}) {
 
 async function loadProductsFromDB() {
   const data = await sbFetch('products?order=id.asc');
-  if (data !== null) {
-    if (data.length > 0) {
-      products = data.map(p => ({
-        id: p.id, name: p.name, cat: p.cat,
-        price: p.price, weight: p.weight || '-',
-        emoji: p.emoji || '📦', img: p.img || '',
-        inStock: p.in_stock
-      }));
-      nextProductId = Math.max(...products.map(p => p.id)) + 1;
-      // Cache ga saqlaymiz
-      localStorage.setItem('choco_products_cache', JSON.stringify(products));
-    } else {
-      products = [];
-      localStorage.removeItem('choco_products_cache');
-    }
+  if (data !== null && data.length > 0) {
+    products = data.map(p => ({
+      id: p.id, name: p.name, cat: p.cat,
+      price: p.price, weight: p.weight || '-',
+      emoji: p.emoji || '📦', img: p.img || '',
+      inStock: p.in_stock
+    }));
+    nextProductId = Math.max(...products.map(p => p.id)) + 1;
+    localStorage.setItem('choco_products_cache', JSON.stringify(products));
+    renderCats();
+    renderProducts(products);
+  } else if (data !== null && data.length === 0) {
+    // Supabase bo'sh - default ko'rsatma
+    products = [...defaultProducts];
     renderCats();
     renderProducts(products);
   }
+  // data === null bo'lsa (timeout) - hozir ko'rsatilgan narsalar qoladi
 }
 
 async function loadSettingsFromDB() {
@@ -561,7 +561,7 @@ const defaultProducts = [
 
 // Avval localStorage dan yuklash (tez)
 const cachedProducts = localStorage.getItem('choco_products_cache');
-let products = cachedProducts ? JSON.parse(cachedProducts) : [];
+let products = cachedProducts ? JSON.parse(cachedProducts) : [...defaultProducts];
 let nextProductId = products.length + 1;
 let cart = {};
 let orders = [];
