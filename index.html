@@ -1040,16 +1040,45 @@ async function deleteProduct(id) {
   renderProducts(products);
 }
 
+let newImgFile = null;
+
 function handleImgUpload(input) {
   const file = input.files[0];
   if (!file) return;
+  if (file.size > 5 * 1024 * 1024) {
+    alert("Rasm 5MB dan kichik bo'lishi kerak!");
+    return;
+  }
+  newImgFile = file;
   const reader = new FileReader();
   reader.onload = function(e) {
-    newImgBase64 = e.target.result;
     document.getElementById('ap-img-preview').style.display = 'block';
-    document.getElementById('ap-img-preview-img').src = newImgBase64;
+    document.getElementById('ap-img-preview-img').src = e.target.result;
   };
   reader.readAsDataURL(file);
+}
+
+async function uploadImageToStorage(file) {
+  try {
+    const fileName = Date.now() + '_' + file.name.replace(/[^a-zA-Z0-9.]/g, '_');
+    const res = await fetch(SUPABASE_URL + '/storage/v1/object/products/' + fileName, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'Content-Type': file.type,
+        'Cache-Control': '3600'
+      },
+      body: file
+    });
+    if (res.ok) {
+      return SUPABASE_URL + '/storage/v1/object/public/products/' + fileName;
+    }
+    return '';
+  } catch(e) {
+    console.error('Upload error:', e);
+    return '';
+  }
 }
 
 async function addProduct() {
@@ -1067,11 +1096,19 @@ async function addProduct() {
   if (!name) { alert("Mahsulot nomini kiriting!"); return; }
   if (!priceVal || isNaN(price) || price <= 0) { alert("Narxni to'g'ri kiriting!"); return; }
 
-  const newProduct = { id: nextProductId++, name, cat, price, weight, emoji, img: newImgBase64, inStock: true };
+  // Rasmni yuklash
+  let imgUrl = '';
+  if (newImgFile) {
+    alert('Rasm yuklanmoqda...');
+    imgUrl = await uploadImageToStorage(newImgFile);
+    if (!imgUrl) { alert("Rasm yuklanmadi, lekin mahsulot qo'shiladi!"); }
+  }
+
+  const newProduct = { id: nextProductId++, name, cat, price, weight, emoji, img: imgUrl, inStock: true };
   products.push(newProduct);
 
   // Supabase ga saqlash
-  const saved = await saveProductToDB({ ...newProduct, img: newImgBase64 });
+  const saved = await saveProductToDB({ ...newProduct, img: imgUrl });
   if (saved && saved[0]) newProduct.id = saved[0].id;
 
   renderCats();
@@ -1085,6 +1122,7 @@ async function addProduct() {
   document.getElementById('ap-cat-new').value = '';
   document.getElementById('ap-unit').selectedIndex = 0;
   document.getElementById('ap-img-preview').style.display = 'none';
+  newImgFile = null;
   newImgBase64 = '';
 
   alert('Mahsulot qoshildi: ' + name);
