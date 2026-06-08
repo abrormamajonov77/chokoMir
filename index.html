@@ -65,15 +65,12 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
 .qty-ctrl{display:flex;align-items:center;gap:6px}
 .qty-ctrl button{width:26px;height:26px;border-radius:50%;border:1.5px solid #4A2C1A;background:transparent;color:#4A2C1A;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit}
 .qty-ctrl span{font-size:14px;font-weight:700;min-width:16px;text-align:center}
-/* BOTTOM NAV */
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#2C1810;border-top:1px solid #4A2C1A;display:flex;z-index:200}
 .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:8px 0 6px;gap:2px;font-size:10px;font-weight:600;color:rgba(232,184,75,0.45);cursor:pointer;border:none;background:transparent;font-family:inherit}
 .nav-item.active{color:#E8B84B}
 .nav-icon{font-size:22px}
-/* PAGES */
 .page{display:none}
 .page.active{display:block}
-/* CART */
 .cart-empty{text-align:center;padding:60px 20px;color:var(--text2)}
 .cart-empty-icon{font-size:60px;margin-bottom:12px}
 .cart-item{background:var(--white);border-radius:var(--radius);margin:0 14px 10px;padding:12px;display:flex;align-items:center;gap:12px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
@@ -87,7 +84,6 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
 .cart-total-row{display:flex;justify-content:space-between;font-size:13px;color:var(--text2);margin-bottom:6px}
 .cart-total-sum{display:flex;justify-content:space-between;font-size:16px;font-weight:700;color:var(--text);border-top:1.5px solid var(--gray2);padding-top:10px;margin-top:4px}
 .checkout-btn{width:100%;padding:14px;background:#2C1810;color:#E8B84B;border:none;border-radius:var(--radius);font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;margin-top:10px}
-/* ORDER FORM */
 .form-wrap{padding:14px;display:flex;flex-direction:column;gap:14px}
 .form-section{background:var(--white);border-radius:var(--radius);padding:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
 .form-section-title{font-size:13px;font-weight:700;color:var(--text2);margin-bottom:12px;display:flex;align-items:center;gap:6px}
@@ -104,7 +100,6 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
 .pay-opt-label{font-size:13px;font-weight:600;color:var(--text)}
 .submit-btn{width:100%;padding:14px;background:#2C1810;color:#E8B84B;border:none;border-radius:var(--radius);font-size:16px;font-weight:700;font-family:inherit;cursor:pointer}
 .back-btn{display:flex;align-items:center;gap:6px;background:none;border:none;font-size:14px;font-weight:600;color:var(--green);font-family:inherit;cursor:pointer;padding:14px 14px 0}
-/* ORDERS */
 .order-card{background:var(--white);border-radius:var(--radius);margin:0 14px 10px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
 .order-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .order-id{font-size:13px;font-weight:700;color:var(--text2)}
@@ -122,7 +117,6 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
 .step-dot.done{background:var(--green);color:#fff}
 .step-dot.active{background:var(--green);color:#fff;box-shadow:0 0 0 3px var(--green-light)}
 .step-label{font-size:9px;color:var(--text2);text-align:center}
-/* PROFILE */
 .profile-wrap{padding:14px}
 .profile-card{background:var(--white);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-bottom:14px}
 .profile-avatar{width:70px;height:70px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 12px}
@@ -132,7 +126,6 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
 .stat-card{background:var(--white);border-radius:var(--radius);padding:14px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
 .stat-num{font-size:24px;font-weight:700;color:var(--green)}
 .stat-label{font-size:12px;color:var(--text2);margin-top:2px}
-/* RATING */
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:500;display:flex;align-items:flex-end;justify-content:center}
 .modal{background:var(--white);border-radius:var(--radius) var(--radius) 0 0;padding:24px 20px;width:100%;max-width:480px}
 .modal-title{font-size:18px;font-weight:700;text-align:center;margin-bottom:6px}
@@ -142,15 +135,12 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
 .star.active{filter:none;transform:scale(1.1);opacity:1}
 .rating-comment{width:100%;padding:10px 12px;border-radius:var(--radius-sm);border:1.5px solid var(--gray2);font-size:14px;font-family:inherit;resize:none;height:80px;outline:none;margin-bottom:14px}
 .rating-submit{width:100%;padding:13px;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:700;font-family:inherit;cursor:pointer}
-/* SUCCESS */
 .success-page{text-align:center;padding:60px 20px}
 .success-icon{font-size:70px;margin-bottom:16px}
 .success-title{font-size:22px;font-weight:700;margin-bottom:8px}
 .success-sub{font-size:14px;color:var(--text2);margin-bottom:24px}
 .home-btn{padding:13px 32px;background:#2C1810;color:#E8B84B;border:none;border-radius:var(--radius);font-size:15px;font-weight:700;font-family:inherit;cursor:pointer}
-/* PAGE TITLE */
 .page-title{font-size:16px;font-weight:700;padding:14px 14px 10px}
-/* ADMIN */
 .admin-header{background:#1a1a2e;padding:16px;color:#fff}
 .admin-title{font-size:18px;font-weight:700}
 .admin-sub{font-size:12px;opacity:0.7;margin-top:2px}
@@ -189,14 +179,16 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
 .select-field{width:100%;padding:10px 12px;border-radius:var(--radius-sm);border:1.5px solid var(--gray2);font-size:14px;font-family:inherit;background:var(--gray);outline:none}
 .img-upload-btn{width:100%;padding:10px;border:2px dashed var(--gray2);border-radius:var(--radius-sm);background:transparent;font-size:14px;font-family:inherit;color:var(--text2);cursor:pointer;text-align:center}
+/* OFFLINE BANNER */
+.offline-banner{background:#8B1A1A;color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:600;display:none}
+.offline-banner.show{display:block}
 </style>
 </head>
 <body>
 
-<!-- CLOSED BANNER -->
+<div class="offline-banner" id="offline-banner">📵 Internet yo'q — buyurtma saqlandi, tiklanganda yuboriladi</div>
 <div class="closed-banner hidden" id="closed-banner">🔴 Do'kon hozir yopiq. Tez orada ochamiz!</div>
 
-<!-- HEADER -->
 <div class="header" id="main-header">
   <div class="header-top">
     <span class="logo" id="logo-tap">✦ Chocomir</span>
@@ -205,7 +197,6 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
   <div class="header-sub" id="header-sub">Tez va sifatli yetkazib berish</div>
 </div>
 
-<!-- HOME PAGE -->
 <div class="page active" id="page-home">
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
@@ -229,13 +220,11 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
   <div class="products" id="products-list"></div>
 </div>
 
-<!-- CART PAGE -->
 <div class="page" id="page-cart">
   <div class="page-title">🛒 Savatcha</div>
   <div id="cart-content"></div>
 </div>
 
-<!-- ORDER FORM PAGE -->
 <div class="page" id="page-order">
   <button class="back-btn" onclick="showPage('cart');renderCart()">← Orqaga</button>
   <div class="form-wrap">
@@ -266,23 +255,20 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
   </div>
 </div>
 
-<!-- SUCCESS PAGE -->
 <div class="page" id="page-success">
   <div class="success-page">
     <div class="success-icon">🎉</div>
     <div class="success-title">Buyurtma qabul qilindi!</div>
-    <div class="success-sub">Tez orada siz bilan bog'lanamiz!</div>
+    <div class="success-sub" id="success-sub">Tez orada siz bilan bog'lanamiz!</div>
     <button class="home-btn" onclick="goHome()">🏠 Bosh sahifaga</button>
   </div>
 </div>
 
-<!-- ORDERS PAGE -->
 <div class="page" id="page-orders">
   <div class="page-title">📦 Buyurtmalarim</div>
   <div id="orders-list"></div>
 </div>
 
-<!-- PROFILE PAGE -->
 <div class="page" id="page-profile">
   <div class="profile-wrap">
     <div class="profile-card">
@@ -291,13 +277,12 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
       <div class="profile-phone" id="profile-phone">Telefon ko'rsatilmagan</div>
     </div>
     <div class="profile-stats">
-      <div class="stat-card"><div class="stat-num" id="stat-orders">0</div><div class="stat-label">Buyurtmalar</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-orders">0</div><div class="stat-label">Buyurtmalarim</div></div>
       <div class="stat-card"><div class="stat-num" id="stat-spent">0</div><div class="stat-label">Jami xarid</div></div>
     </div>
   </div>
 </div>
 
-<!-- ADMIN PAGE -->
 <div class="page" id="page-admin">
   <div class="admin-header">
     <div class="admin-title">⚙️ Admin panel</div>
@@ -309,8 +294,6 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
     <button class="admin-tab" onclick="adminTab(this,'admin-add')">➕ Qo'shish</button>
     <button class="admin-tab" onclick="adminTab(this,'admin-settings')">⚙️ Sozlamalar</button>
   </div>
-
-  <!-- Admin orders -->
   <div id="admin-orders" class="admin-content">
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-num" id="a-total-orders">0</div><div class="stat-label">Jami buyurtma</div></div>
@@ -318,13 +301,9 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
     </div>
     <div id="admin-orders-list"></div>
   </div>
-
-  <!-- Admin products -->
   <div id="admin-products" class="admin-content hidden">
     <div id="admin-products-list"></div>
   </div>
-
-  <!-- Admin add product -->
   <div id="admin-add" class="admin-content hidden">
     <div class="add-product-form">
       <h3>➕ Yangi mahsulot qo'shish</h3>
@@ -359,13 +338,11 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
       <button class="submit-btn" onclick="addProduct()">➕ Qo'shish</button>
     </div>
   </div>
-
-  <!-- Admin settings -->
   <div id="admin-settings" class="admin-content hidden">
     <div class="add-product-form">
       <h3>🏪 Do'kon ma'lumotlari</h3>
       <div class="form-field"><label>Do'kon nomi</label><input type="text" id="s-shopname" placeholder="Chocomir"/></div>
-      <div class="form-field"><label>Tagline (qisqa tavsif)</label><input type="text" id="s-slogan" placeholder="Tez va sifatli yetkazib berish"/></div>
+      <div class="form-field"><label>Tagline</label><input type="text" id="s-slogan" placeholder="Tez va sifatli yetkazib berish"/></div>
       <button class="submit-btn" onclick="saveShopInfo()">💾 Saqlash</button>
     </div>
     <div class="add-product-form">
@@ -387,7 +364,6 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
   </div>
 </div>
 
-<!-- RATING MODAL -->
 <div class="modal-bg hidden" id="rating-modal">
   <div class="modal">
     <div class="modal-title">Xizmatimizdан qanoatlandingizmi?</div>
@@ -404,7 +380,6 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
   </div>
 </div>
 
-<!-- BOTTOM NAV -->
 <div class="bottom-nav" id="bottom-nav">
   <button class="nav-item active" id="nav-home" onclick="showPage('home')"><span class="nav-icon">🏠</span>Asosiy</button>
   <button class="nav-item" id="nav-catalog" onclick="showPage('home')"><span class="nav-icon">📋</span>Katalog</button>
@@ -414,17 +389,19 @@ body{font-family:'Nunito',sans-serif;background:var(--gray);color:var(--text);mi
 </div>
 
 <script>
-// ========== CONFIG ==========
+// ===== CONFIG =====
 const BOT_TOKEN = '8011900597:AAHgKYkPrLnDc6sjLJsR36VE_fNANfnWNvg';
 const ADMIN_CHAT_ID = '88808651';
+const ADMIN_IDS = ['88808651'];
+const ADMIN_PASSWORD = 'chocomir2024';
 const SUPABASE_URL = 'https://mmlfbbrzrkswngonrjwp.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1tbGZiYnJ6cmtzd25nb25yandwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2ODc1NzgsImV4cCI6MjA5NDI2MzU3OH0.rzED7zMlyQszdJYX6RSrC2YBOPYItdNJ1YRjLw7SaDk';
 
-// ========== SUPABASE ==========
+// ===== SUPABASE =====
 async function sbFetch(path, options={}) {
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 3000);
+    const timeout = setTimeout(() => controller.abort(), 5000);
     const res = await fetch(SUPABASE_URL + '/rest/v1/' + path, {
       signal: controller.signal,
       headers: {
@@ -458,12 +435,10 @@ async function loadProductsFromDB() {
     renderCats();
     renderProducts(products);
   } else if (data !== null && data.length === 0) {
-    // Supabase bo'sh - default ko'rsatma
     products = [...defaultProducts];
     renderCats();
     renderProducts(products);
   }
-  // data === null bo'lsa (timeout) - hozir ko'rsatilgan narsalar qoladi
 }
 
 async function loadSettingsFromDB() {
@@ -483,8 +458,7 @@ async function loadOrdersFromDB() {
   const data = await sbFetch('orders?order=id.desc');
   if (data) {
     orders = data.map(o => ({
-      id: o.id,
-      name: o.name, phone: o.phone,
+      id: o.id, name: o.name, phone: o.phone,
       address: o.address, comment: o.comment,
       pay: o.pay, items: o.items || [],
       total: o.total, delivery: o.delivery || 0,
@@ -548,7 +522,7 @@ async function saveSettingsToDB() {
   });
 }
 
-// ========== DATA ==========
+// ===== DATA =====
 const defaultProducts = [
   {id:1,name:'Milka shokolad',cat:'Shokoladlar',price:18000,weight:'100g',emoji:'🍫',img:'',inStock:true},
   {id:2,name:'Snickers',cat:'Shokoladlar',price:12000,weight:'50g',emoji:'🍫',img:'',inStock:true},
@@ -559,11 +533,15 @@ const defaultProducts = [
   {id:7,name:'Nescafe 3in1',cat:'Ichimliklar',price:22000,weight:'20 paket',emoji:'☕',img:'',inStock:true},
 ];
 
-// Avval localStorage dan yuklash (tez)
 const cachedProducts = localStorage.getItem('choco_products_cache');
 let products = cachedProducts ? JSON.parse(cachedProducts) : [...defaultProducts];
 let nextProductId = products.length + 1;
-let cart = {};
+
+// Savat localStorage dan yuklash
+let cart = JSON.parse(localStorage.getItem('choco_cart') || '{}');
+// id lar string bo'lishi mumkin, number ga o'girish
+cart = Object.fromEntries(Object.entries(cart).map(([k,v]) => [Number(k), v]));
+
 let orders = [];
 let favourites = JSON.parse(localStorage.getItem('choco_favs') || '[]');
 let savedUser = JSON.parse(localStorage.getItem('choco_user') || 'null');
@@ -574,24 +552,20 @@ let currentCat = 'all';
 let currentSort = 'default';
 let selectedPay = 'Naqd';
 let selectedRating = 0;
-let newImgBase64 = '';
+let newImgFile = null;
 
-// Telegram
 const tg = window.Telegram?.WebApp;
 if (tg) { tg.expand(); tg.ready(); }
 const tgUser = tg?.initDataUnsafe?.user;
 
-// Admin tap counter
 let logoTaps = 0;
 
-// ========== INIT ==========
+// ===== INIT =====
 async function init() {
   updateShopInfo();
   checkWorkHours();
   updateCartBadge();
   updateBanner();
-
-  // Darhol ko'rsatish - cache yoki bo'sh
   renderCats();
   renderProducts(products);
 
@@ -607,12 +581,47 @@ async function init() {
     if (logoTaps >= 5) { logoTaps = 0; openAdmin(); }
   });
 
-  // Supabase dan yuklash - fon rejimida
+  // Internet holati
+  window.addEventListener('offline', () => {
+    document.getElementById('offline-banner').classList.add('show');
+  });
+  window.addEventListener('online', () => {
+    document.getElementById('offline-banner').classList.remove('show');
+    sendPendingOrders();
+  });
+  if (!navigator.onLine) {
+    document.getElementById('offline-banner').classList.add('show');
+  }
+
   Promise.all([
     loadSettingsFromDB(),
     loadProductsFromDB(),
     loadOrdersFromDB()
   ]).catch(() => {});
+}
+
+// Pending buyurtmalarni yuborish (internet tiklananda)
+async function sendPendingOrders() {
+  const pending = JSON.parse(localStorage.getItem('choco_pending_orders') || '[]');
+  if (!pending.length) return;
+  const sent = [];
+  for (const order of pending) {
+    const saved = await saveOrderToDB(order);
+    if (saved && saved[0]) {
+      const orderId = saved[0].id;
+      const deliveryText = order.delivery === 0 ? 'Bepul' : order.delivery.toLocaleString() + " som";
+      const msg = "Yangi buyurtma #" + orderId + "\n\nIsm: " + order.name + "\nTel: " + order.phone + "\nManzil: " + order.address + "\nTolov: " + order.pay + "\n\n" + order.items.join("\n") + "\n\nYetkazib berish: " + deliveryText + "\nJami: " + (order.total + order.delivery).toLocaleString() + " som" + (order.comment ? "\n\nIzoh: " + order.comment : "");
+      fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: ADMIN_CHAT_ID, text: msg })
+      }).catch(() => {});
+      sent.push(order);
+    }
+  }
+  if (sent.length) {
+    const remaining = pending.filter(o => !sent.includes(o));
+    localStorage.setItem('choco_pending_orders', JSON.stringify(remaining));
+  }
 }
 
 function updateShopInfo() {
@@ -636,7 +645,7 @@ function checkWorkHours() {
   else banner.classList.add('hidden');
 }
 
-// ========== CATEGORIES ==========
+// ===== CATEGORIES =====
 function renderCats() {
   const cats = ['all', ...new Set(products.map(p => p.cat))];
   document.getElementById('cats-list').innerHTML = cats.map(c =>
@@ -675,7 +684,7 @@ function searchProducts() {
   renderProducts(filtered);
 }
 
-// ========== PRODUCTS ==========
+// ===== PRODUCTS =====
 function renderProducts(list) {
   const sorted = sortProducts(list);
   document.getElementById('products-list').innerHTML = sorted.map(p => {
@@ -711,10 +720,15 @@ function toggleFav(id) {
   renderProducts(list);
 }
 
-// ========== CART ==========
+// ===== CART =====
+function saveCart() {
+  localStorage.setItem('choco_cart', JSON.stringify(cart));
+}
+
 function changeQty(id, delta) {
   cart[id] = Math.max(0, (cart[id] || 0) + delta);
   if (cart[id] === 0) delete cart[id];
+  saveCart();
   updateCartBadge();
   const list = currentCat === 'all' ? products : products.filter(p => p.cat === currentCat);
   renderProducts(list);
@@ -765,6 +779,7 @@ function renderCart() {
 
 function removeItem(id) {
   delete cart[id];
+  saveCart();
   updateCartBadge();
   renderCart();
   const list = currentCat === 'all' ? products : products.filter(p => p.cat === currentCat);
@@ -777,7 +792,13 @@ function selectPay(el, method) {
   selectedPay = method;
 }
 
-// ========== ORDER ==========
+// ===== TELEFON VALIDATSIYA =====
+function validatePhone(phone) {
+  const cleaned = phone.replace(/\s/g, '');
+  return /^(\+998|998)?[0-9]{9}$/.test(cleaned);
+}
+
+// ===== ORDER =====
 async function submitOrder() {
   const name = document.getElementById('f-name').value.trim();
   const phone = document.getElementById('f-phone').value.trim();
@@ -785,10 +806,10 @@ async function submitOrder() {
   const flat = document.getElementById('f-flat').value.trim();
   const comment = document.getElementById('f-comment').value.trim();
 
-  if (!name || !phone || !address) {
-    alert("Ism, telefon va manzilni to'ldiring!");
-    return;
-  }
+  if (!name) { alert("Ismingizni kiriting!"); return; }
+  if (!phone) { alert("Telefon raqamingizni kiriting!"); return; }
+  if (!validatePhone(phone)) { alert("Telefon raqam noto'g'ri!\nTo'g'ri format: +998 90 123 45 67"); return; }
+  if (!address) { alert("Manzilingizni kiriting!"); return; }
 
   savedUser = { name, phone };
   localStorage.setItem('choco_user', JSON.stringify(savedUser));
@@ -803,63 +824,92 @@ async function submitOrder() {
   const delivery = sum >= settings.freeDeliveryFrom ? 0 : settings.deliveryPrice;
   const fullAddress = address + (flat ? ', ' + flat : '');
 
-  const order = { name, phone, address: fullAddress, comment, pay: selectedPay, items: itemsList, total: sum, delivery, user_chat_id: tgUser ? String(tgUser.id) : '' };
+  const order = {
+    name, phone, address: fullAddress, comment,
+    pay: selectedPay, items: itemsList,
+    total: sum, delivery,
+    user_chat_id: tgUser ? String(tgUser.id) : ''
+  };
 
   // Supabase ga saqlash
   const saved = await saveOrderToDB(order);
-  const orderId = saved && saved[0] && saved[0].id ? saved[0].id : '?';
 
-  // Mijozga tasdiqlash xabari
+  if (!saved || !saved[0]) {
+    // Internet yo'q — localStorage ga saqlash
+    const localOrders = JSON.parse(localStorage.getItem('choco_pending_orders') || '[]');
+    localOrders.push({ ...order, id: 'local_' + Date.now(), status: 'new', date: new Date().toISOString() });
+    localStorage.setItem('choco_pending_orders', JSON.stringify(localOrders));
+    document.getElementById('success-sub').textContent = "Buyurtma saqlandi! Internet tiklanganda yuboriladi.";
+    cart = {};
+    saveCart();
+    updateCartBadge();
+    showPage('success');
+    return;
+  }
+
+  const orderId = saved[0].id;
+  document.getElementById('success-sub').textContent = "Buyurtma #" + orderId + " qabul qilindi! Tez orada bog'lanamiz.";
+
+  // Mijozga xabar
   if (tgUser && tgUser.id) {
-    const userMsg = "Buyurtmangiz qabul qilindi! #" + orderId + "\n\n"
-      + itemsList.join("\n") + "\n\n"
-      + "Jami: " + (sum + delivery).toLocaleString() + " som\n"
-      + "Tolov: " + selectedPay + "\n"
-      + "Manzil: " + fullAddress + "\n\n"
-      + "Tez orada bog'lanamiz!";
+    const userMsg = "Buyurtmangiz qabul qilindi! #" + orderId + "\n\n" + itemsList.join("\n") + "\n\nJami: " + (sum + delivery).toLocaleString() + " som\nTolov: " + selectedPay + "\nManzil: " + fullAddress + "\n\nTez orada bog'lanamiz!";
     fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ chat_id: tgUser.id, text: userMsg })
     }).catch(() => {});
   }
 
-  // Telegram xabar - Markdown ishlatmaymiz
+  // Adminga xabar
   const deliveryText = delivery === 0 ? 'Bepul' : delivery.toLocaleString() + " som";
-  const msg = "Yangi buyurtma #" + orderId + "\n\n"
-    + "Ism: " + name + "\n"
-    + "Tel: " + phone + "\n"
-    + "Manzil: " + fullAddress + "\n"
-    + "Tolov: " + selectedPay + "\n\n"
-    + itemsList.join("\n") + "\n\n"
-    + "Yetkazib berish: " + deliveryText + "\n"
-    + "Jami: " + (sum + delivery).toLocaleString() + " som"
-    + (comment ? "\n\nIzoh: " + comment : "");
-
+  const msg = "Yangi buyurtma #" + orderId + "\n\nIsm: " + name + "\nTel: " + phone + "\nManzil: " + fullAddress + "\nTolov: " + selectedPay + "\n\n" + itemsList.join("\n") + "\n\nYetkazib berish: " + deliveryText + "\nJami: " + (sum + delivery).toLocaleString() + " som" + (comment ? "\n\nIzoh: " + comment : "");
   fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ chat_id: ADMIN_CHAT_ID, text: msg })
   }).catch(e => console.error('Telegram error:', e));
 
   cart = {};
+  saveCart();
   updateCartBadge();
   showPage('success');
 }
 
-// ========== ORDERS ==========
+// ===== ORDERS =====
 function renderOrders() {
   const el = document.getElementById('orders-list');
-  if (!orders.length) {
+
+  // Faqat joriy foydalanuvchi buyurtmalari
+  const myOrders = orders.filter(o => {
+    if (tgUser && tgUser.id) return o.user_chat_id === String(tgUser.id);
+    if (savedUser && savedUser.phone) return o.phone === savedUser.phone;
+    return true;
+  });
+
+  // Pending (offline) buyurtmalar ham ko'rsatish
+  const pending = JSON.parse(localStorage.getItem('choco_pending_orders') || '[]');
+
+  if (!myOrders.length && !pending.length) {
     el.innerHTML = '<div class="cart-empty"><div class="cart-empty-icon">📦</div><p>Hali buyurtma yo\'q</p></div>';
     return;
   }
+
   const statusLabel = { new: 'Yangi', confirmed: 'Tasdiqlandi', cooking: 'Tayyorlanmoqda', onway: "Yo'lda", delivered: 'Yetkazildi' };
   const statusClass = { new: 'status-new', confirmed: 'status-confirmed', cooking: 'status-cooking', onway: 'status-onway', delivered: 'status-delivered' };
   const steps = ['new', 'confirmed', 'cooking', 'onway', 'delivered'];
   const stepEmoji = ['🆕', '✅', '👨‍🍳', '🚚', '🏠'];
   const stepNames = ['Yangi', 'Tasdiqlandi', 'Tayyor', "Yo'lda", 'Yetdi'];
-  el.innerHTML = orders.map(o => {
+
+  // Pending buyurtmalar
+  const pendingHtml = pending.map(o => `
+    <div class="order-card" style="border-left:3px solid #C8952A">
+      <div class="order-header">
+        <span class="order-id">Kutilmoqda...</span>
+        <span class="order-status status-new">📵 Offline</span>
+      </div>
+      <div class="order-items">${Array.isArray(o.items) ? o.items.join(', ') : o.items}</div>
+      <div class="order-total">${(o.total || 0).toLocaleString()} so'm</div>
+    </div>`).join('');
+
+  const ordersHtml = myOrders.map(o => {
     const curStep = steps.indexOf(o.status);
     const itemsText = Array.isArray(o.items) ? o.items.join(', ') : o.items;
     return `<div class="order-card">
@@ -877,18 +927,28 @@ function renderOrders() {
       ).join('')}</div>
     </div>`;
   }).join('');
+
+  el.innerHTML = pendingHtml + ordersHtml;
 }
 
-// ========== PROFILE ==========
+// ===== PROFILE =====
 function renderProfile() {
   const u = savedUser || { name: 'Mehmon', phone: '' };
+
+  // Faqat o'z buyurtmalari
+  const myOrders = orders.filter(o => {
+    if (tgUser && tgUser.id) return o.user_chat_id === String(tgUser.id);
+    if (u.phone) return o.phone === u.phone;
+    return false;
+  });
+
   document.getElementById('profile-name').textContent = tgUser?.first_name || u.name || 'Mehmon';
   document.getElementById('profile-phone').textContent = u.phone || "Telefon ko'rsatilmagan";
-  document.getElementById('stat-orders').textContent = orders.length;
-  document.getElementById('stat-spent').textContent = orders.reduce((a, o) => a + (o.total || 0), 0).toLocaleString();
+  document.getElementById('stat-orders').textContent = myOrders.length;
+  document.getElementById('stat-spent').textContent = myOrders.reduce((a, o) => a + (o.total || 0), 0).toLocaleString();
 }
 
-// ========== RATING ==========
+// ===== RATING =====
 function rateStar(n) {
   selectedRating = n;
   document.querySelectorAll('.star').forEach((s, i) => s.classList.toggle('active', i < n));
@@ -896,12 +956,38 @@ function rateStar(n) {
 
 function submitRating() {
   if (!selectedRating) { alert("Yulduz tanlang!"); return; }
+  const comment = document.getElementById('rating-comment').value.trim();
+  // Adminga rating xabari
+  const msg = "Yangi baho: " + '⭐'.repeat(selectedRating) + (comment ? "\n\nIzoh: " + comment : "");
+  fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: ADMIN_CHAT_ID, text: msg })
+  }).catch(() => {});
   alert("Rahmat! " + selectedRating + " yulduz uchun minnatdormiz!");
   document.getElementById('rating-modal').classList.add('hidden');
+  document.getElementById('rating-comment').value = '';
+  selectedRating = 0;
+  document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
 }
 
-// ========== ADMIN ==========
+// ===== ADMIN =====
 function openAdmin() {
+  const currentId = tgUser ? String(tgUser.id) : null;
+
+  if (currentId && ADMIN_IDS.includes(currentId)) {
+    // Telegram orqali admin
+    showPage('admin');
+    renderAdminOrders();
+    return;
+  }
+
+  // Parol bilan kirish
+  const pass = prompt("🔐 Admin paroli:");
+  if (!pass) return;
+  if (pass !== ADMIN_PASSWORD) {
+    alert("❌ Parol noto'g'ri!");
+    return;
+  }
   showPage('admin');
   renderAdminOrders();
 }
@@ -931,8 +1017,6 @@ async function renderAdminOrders() {
   document.getElementById('a-new-orders').textContent = orders.filter(o => o.status === 'new').length;
   const el = document.getElementById('admin-orders-list');
   if (!orders.length) { el.innerHTML = '<p style="color:var(--text2);text-align:center;padding:20px">Buyurtmalar yo\'q</p>'; return; }
-  const statusColors = { new: '#ffc107', confirmed: '#1D9E75', cooking: '#007bff', onway: '#17a2b8', delivered: '#28a745' };
-  const statusLabel = { new: 'Yangi', confirmed: 'Tasdiqlandi', cooking: 'Tayyorlanmoqda', onway: "Yo'lda", delivered: 'Yetkazildi' };
   el.innerHTML = orders.map(o => {
     const itemsText = Array.isArray(o.items) ? o.items.join(', ') : (o.items || '');
     const d = new Date(o.date);
@@ -963,28 +1047,33 @@ async function renderAdminOrders() {
 
 async function changeOrderStatus(id, status) {
   await updateOrderStatusInDB(id, status);
-
-  // Mijozga xabar yuborish
   const order = orders.find(o => o.id === id);
   if (order && order.user_chat_id) {
     const statusMessages = {
       confirmed: "Buyurtmangiz tasdiqlandi! #" + id + "\n\nTez orada tayyorlanadi.",
       cooking: "Buyurtmangiz tayyorlanmoqda! #" + id + "\n\nBiroz kuting...",
       onway: "Buyurtmangiz yo'lda! #" + id + "\n\nKurier siz tomonga yo'l oldi.",
-      delivered: "Buyurtmangiz yetib keldi! #" + id + "\n\nXarid qilganingiz uchun rahmat!\n\nIltimos bizni baholang:"
+      delivered: "Buyurtmangiz yetib keldi! #" + id + "\n\nXarid qilganingiz uchun rahmat!"
     };
     const msg = statusMessages[status];
     if (msg) {
       fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ chat_id: order.user_chat_id, text: msg })
       }).catch(() => {});
     }
   }
-
-  if (status === 'delivered') {
-    setTimeout(() => document.getElementById('rating-modal').classList.remove('hidden'), 500);
+  // Rating foydalanuvchiga yuborish (yetkazildi bo'lganda)
+  if (status === 'delivered' && order && order.user_chat_id) {
+    setTimeout(() => {
+      fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: order.user_chat_id,
+          text: "Xizmatimizni baholaysizmi? ⭐\n\nChocomir ilovasini oching va baho qoldiring!"
+        })
+      }).catch(() => {});
+    }, 2000);
   }
   renderAdminOrders();
 }
@@ -1045,8 +1134,6 @@ async function deleteProduct(id) {
   renderProducts(products);
 }
 
-let newImgFile = null;
-
 function handleImgUpload(input) {
   const file = input.files[0];
   if (!file) return;
@@ -1079,9 +1166,13 @@ async function uploadImageToStorage(file) {
     if (res.ok) {
       return SUPABASE_URL + '/storage/v1/object/public/products/' + fileName;
     }
+    const errText = await res.text();
+    console.error('Storage error:', errText);
+    alert("Rasm yuklanmadi: " + errText + "\nMahsulot rasmsiz qo'shiladi.");
     return '';
   } catch(e) {
     console.error('Upload error:', e);
+    alert("Rasm yuklashda xato. Mahsulot rasmsiz qo'shiladi.");
     return '';
   }
 }
@@ -1101,25 +1192,20 @@ async function addProduct() {
   if (!name) { alert("Mahsulot nomini kiriting!"); return; }
   if (!priceVal || isNaN(price) || price <= 0) { alert("Narxni to'g'ri kiriting!"); return; }
 
-  // Rasmni yuklash
   let imgUrl = '';
   if (newImgFile) {
-    alert('Rasm yuklanmoqda...');
     imgUrl = await uploadImageToStorage(newImgFile);
-    if (!imgUrl) { alert("Rasm yuklanmadi, lekin mahsulot qo'shiladi!"); }
   }
 
   const newProduct = { id: nextProductId++, name, cat, price, weight, emoji, img: imgUrl, inStock: true };
   products.push(newProduct);
 
-  // Supabase ga saqlash
   const saved = await saveProductToDB({ ...newProduct, img: imgUrl });
   if (saved && saved[0]) newProduct.id = saved[0].id;
 
   renderCats();
   renderProducts(products);
 
-  // Formani tozalash
   document.getElementById('ap-name').value = '';
   document.getElementById('ap-price').value = '';
   document.getElementById('ap-weight').value = '';
@@ -1128,7 +1214,6 @@ async function addProduct() {
   document.getElementById('ap-unit').selectedIndex = 0;
   document.getElementById('ap-img-preview').style.display = 'none';
   newImgFile = null;
-  newImgBase64 = '';
 
   alert('Mahsulot qoshildi: ' + name);
 }
@@ -1170,7 +1255,7 @@ function saveWorkHours() {
   alert('Saqlandi!');
 }
 
-// ========== PAGES ==========
+// ===== PAGES =====
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + name).classList.add('active');
@@ -1187,7 +1272,6 @@ function goHome() {
   renderProducts(products);
 }
 
-// Start
 init();
 </script>
 </body>
